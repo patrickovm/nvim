@@ -43,8 +43,14 @@ return packer.startup(function(use)
   -- Plugin Mangager
 	use({ "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" })
 
+  -- Useful lua functions used by many plugins
+	use({ "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" })
+
   -- Colorscheme
 	use({ "dracula/vim", as = "dracula", commit = "d7723a842a6cfa2f62cf85530ab66eb418521dc2" })
+
+  -- Fuzzy Finder
+	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
 	
   -- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
