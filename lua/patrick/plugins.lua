@@ -51,6 +51,9 @@ return packer.startup(function(use)
 
   -- Fuzzy Finder
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
+
+  -- File Explorer
+	use({ "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" })
 	
   -- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
