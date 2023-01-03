@@ -35,6 +35,9 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- NvimTree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggles NvimTree" })
+
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "[F]ind [F]iles" })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "[F]ind by [G]rep" })
