@@ -4,7 +4,7 @@ local opts = { silent = true }
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
--- Normal mode
+-- Normal mode --
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -28,6 +28,15 @@ keymap("v", "p", '"_dP', opts)
 keymap("i", "jk", "<ESC>", { desc = "Press jk fast to enter normal mode" })
 
 -- Visual --
+--
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Plugins --
+
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "[F]ind [F]iles" })
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "[F]ind by [G]rep" })
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "[F]ind existing [B]uffers" })
+keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "[F]ind [K]eymaps" })
