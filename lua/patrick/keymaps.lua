@@ -38,6 +38,9 @@ keymap("v", ">", ">gv", opts)
 -- NvimTree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggles NvimTree" })
 
+-- Git Blame
+keymap("n", "<leader>gb", "<cmd>GitBlameToggle<CR>", { desc = "Toggles GitBlame" })
+
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "[F]ind [F]iles" })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "[F]ind by [G]rep" })
