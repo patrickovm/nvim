@@ -49,6 +49,9 @@ return packer.startup(function(use)
   -- Colorscheme
 	use({ "dracula/vim", as = "dracula", commit = "d7723a842a6cfa2f62cf85530ab66eb418521dc2" })
 
+  -- Syntax/Treesitter
+	use({ "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" })
+
   -- Fuzzy Finder
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
 
