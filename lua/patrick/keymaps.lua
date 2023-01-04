@@ -51,5 +51,6 @@ keymap("n", "<leader>gb", "<cmd>GitBlameToggle<CR>", { desc = "Toggles GitBlame"
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "[F]ind [F]iles" })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "[F]ind by [G]rep" })
+keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "[F]ind [P]rojects" })
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "[F]ind existing [B]uffers" })
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "[F]ind [K]eymaps" })
