@@ -46,6 +46,9 @@ return packer.startup(function(use)
   -- Useful lua functions used by many plugins
 	use({ "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" })
 
+  -- Lazy loading
+	use({ "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" })
+
   -- Colorscheme
 	use({ "dracula/vim", as = "dracula", commit = "d7723a842a6cfa2f62cf85530ab66eb418521dc2" })
 
