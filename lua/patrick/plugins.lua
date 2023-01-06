@@ -86,6 +86,9 @@ return packer.startup(function(use)
 	
   -- Icons
 	use({ "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" })
+
+  -- Colors
+	use({ "NvChad/nvim-colorizer.lua", commit = "9dd7ecde55b06b5114e1fa67c522433e7e59db8b" })
   
   -- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

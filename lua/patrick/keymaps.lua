@@ -60,3 +60,6 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "[F]ind by [G
 keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "[F]ind [P]rojects" })
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "[F]ind existing [B]uffers" })
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "[F]ind [K]eymaps" })
+
+-- Colorizer
+keymap("n", "<leader>ct", "<cmd>ColorizerToggle<CR>", { desc = "Toggles Colorizer" })
