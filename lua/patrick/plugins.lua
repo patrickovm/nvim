@@ -65,7 +65,7 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" })
 
   -- Winbar
-	use({ "utilyre/barbecue.nvim", coomit = "52fda53fc102cd3ef05ec7d0d3a61c6bc09b0f19" })
+	use({ "utilyre/barbecue.nvim", commit = "52fda53fc102cd3ef05ec7d0d3a61c6bc09b0f19" })
 	use({ "SmiteshP/nvim-navic", commit = "7a2b823152fe4de65ee7925b0e32d26ed73bc57c" })
 
   -- Handles buffers and tabs
