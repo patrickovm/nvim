@@ -6,6 +6,9 @@ end
 barbecue.setup({
 	create_autocmd = false, -- prevent barbecue from updating itself automatically
 	attach_navic = false, -- prevent barbecue from automatically attaching nvim-navic
+  theme = {
+    normal = { bg = "#282A36" },
+  }
 })
 
 vim.api.nvim_create_autocmd({
