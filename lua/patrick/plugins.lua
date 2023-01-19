@@ -52,6 +52,36 @@ return packer.startup(function(use)
   -- Colorscheme
 	use({ "dracula/vim", as = "dracula", commit = "d7723a842a6cfa2f62cf85530ab66eb418521dc2" })
 
+  -- LSP
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		commit = "c1a2726704f6fe87bde61a4439ea5d1d8b127cdd",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig", commit = "6b43ce561d97412cc512b569db6938e44529293e" },
+			{ "williamboman/mason.nvim", commit = "b8c3fceed16d29a166cf73ce55358f13c9f6cfcc" },
+			{ "williamboman/mason-lspconfig.nvim", commit = "aa25b4153d2f2636c3b3a8c8360349d2b29e7ae3" },
+
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp", commit = "c49ad26e894e137e401b1d294948c46327877eaf" },
+			{ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
+			{ "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" },
+			{ "saadparwaiz1/cmp_luasnip", commit = "18095520391186d634a0045dacaa346291096566" },
+			{ "hrsh7th/cmp-nvim-lsp", commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" },
+			{ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" },
+
+			-- Snippets
+			{ "L3MON4D3/LuaSnip", commit = "5570fd797eae0790affb54ea669a150cad76db5d" },
+			{ "rafamadriz/friendly-snippets", commit = "1a6a02350568d6830bcfa167c72f9b6e75e454ae" },
+		},
+	})
+
+	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" })
+	use({ "b0o/SchemaStore.nvim", commit = "23bf2d69967491b1dc43f37c809f2711cc879fd2" })
+	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
+	use({ "j-hui/fidget.nvim", commit = "44585a0c0085765195e6961c15529ba6c5a2a13b" })
+	use({ "folke/neodev.nvim", commit = "c045c0fe93b1f9c78443d0f3b88660fffbcf64a7" })
+
   -- Syntax/Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" })
 
