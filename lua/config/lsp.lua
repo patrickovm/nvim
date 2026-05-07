@@ -62,6 +62,7 @@ vim.lsp.enable({
 	"cmake",
 	"bashls",
 	"pyright",
+	"taplo",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default

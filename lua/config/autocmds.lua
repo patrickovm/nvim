@@ -52,7 +52,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     callback = function(event)
         local exclude = { "gitcommit" }
         local buf = event.buf
-        if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].lazyvim_last_loc then
+        if
+            vim.tbl_contains(exclude, vim.bo[buf].filetype)
+            or vim.b[buf].lazyvim_last_loc
+        then
             return
         end
         vim.b[buf].lazyvim_last_loc = true
@@ -66,7 +69,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("iskeyword_kebab"),
-    pattern = { "css", "scss", "less", "html", "htmldjango", "blade", "typescriptreact", "javascriptreact" },
+    pattern = {
+        "css",
+        "scss",
+        "less",
+        "html",
+        "htmldjango",
+        "blade",
+        "typescriptreact",
+        "javascriptreact",
+    },
     callback = function()
         vim.opt_local.iskeyword:append("-")
     end,
