@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "vim": {
+      "rev": "e7b91facff94bdf3a248df9b683119b84672256a",
+      "src": "https://github.com/dracula/vim"
+    }
+  }
+}

@@ -46,7 +46,7 @@ opt.writebackup = false                       -- Don't create backup before writ
 opt.swapfile = false                          -- Don't create swap files
 opt.undofile = true                           -- Persistent undo
 opt.undolevels = 10000
-opt.undodir = vim.fn.expand("~/.config/nvim/undodir")
+opt.undodir = vim.fn.expand("~/.cache/undodir")
 opt.updatetime = 300                          -- Faster completion
 opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 opt.ttimeoutlen = 0                           -- Key code timeout
@@ -92,7 +92,7 @@ opt.redrawtime = 10000
 opt.maxmempattern = 20000
 
 -- Create undo directory if it doesn't exist
-local undodir = vim.fn.expand("~/config/nvim/undodir")
+local undodir = vim.fn.expand("~/.cache/undodir")
 if vim.fn.isdirectory(undodir) == 0 then
     vim.fn.mkdir(undodir, "p")
 end
