@@ -1,5 +1,5 @@
 vim.pack.add({
-    { src = "https://github.com/dracula/vim" }
+    { src = "https://github.com/dracula/vim" },
 })
 
 vim.cmd.colorscheme("dracula")

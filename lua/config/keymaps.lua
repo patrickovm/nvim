@@ -51,20 +51,58 @@ map("n", "<leader>sv", "<C-W>v", { desc = "Split Window Right", remap = true })
 -- ===========================================================
 
 -- Smart j/k: moves by visual lines when no count, real lines with count
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-
-
+map(
+    { "n", "x" },
+    "j",
+    "v:count == 0 ? 'gj' : 'j'",
+    { desc = "Down", expr = true, silent = true }
+)
+map(
+    { "n", "x" },
+    "<Down>",
+    "v:count == 0 ? 'gj' : 'j'",
+    { desc = "Down", expr = true, silent = true }
+)
+map(
+    { "n", "x" },
+    "k",
+    "v:count == 0 ? 'gk' : 'k'",
+    { desc = "Up", expr = true, silent = true }
+)
+map(
+    { "n", "x" },
+    "<Up>",
+    "v:count == 0 ? 'gk' : 'k'",
+    { desc = "Up", expr = true, silent = true }
+)
 
 -- Move lines up/down (Alt+j/k like VSCode)
-map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
-map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+map(
+    "n",
+    "<A-j>",
+    "<cmd>execute 'move .+' . v:count1<cr>==",
+    { desc = "Move Down" }
+)
+map(
+    "n",
+    "<A-k>",
+    "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==",
+    { desc = "Move Up" }
+)
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
-map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+map(
+    "v",
+    "<A-j>",
+    ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",
+    { desc = "Move Down" }
+)
+map(
+    "v",
+    "<A-k>",
+    ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv",
+    { desc = "Move Up" }
+)
 
 -- Alternative line movement (for terminals that don't support Alt)
 map("v", "J", ":move '>+1<CR>gv=gv", { desc = "Move Block Down" })
@@ -88,20 +126,64 @@ map("n", "<A-l>", "$", { desc = "Go to end of line", silent = true })
 
 -- Select all content
 map("n", "==", "gg<S-v>G")
-map("n", "<A-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" })
+map(
+    "n",
+    "<A-a>",
+    "ggVG",
+    { noremap = true, silent = true, desc = "Select all" }
+)
 
 -- Clear search highlighting
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
-map("n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-    { desc = "Redraw / Clear hlsearch / Diff Update" })
+map(
+    { "i", "n" },
+    "<esc>",
+    "<cmd>noh<cr><esc>",
+    { desc = "Escape and Clear hlsearch" }
+)
+map(
+    "n",
+    "<leader>ur",
+    "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+    { desc = "Redraw / Clear hlsearch / Diff Update" }
+)
 
 -- Smart search navigation (n always goes forward, N always backward)
-map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
-map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
+map(
+    "n",
+    "n",
+    "'Nn'[v:searchforward].'zv'",
+    { expr = true, desc = "Next Search Result" }
+)
+map(
+    "x",
+    "n",
+    "'Nn'[v:searchforward]",
+    { expr = true, desc = "Next Search Result" }
+)
+map(
+    "o",
+    "n",
+    "'Nn'[v:searchforward]",
+    { expr = true, desc = "Next Search Result" }
+)
+map(
+    "n",
+    "N",
+    "'nN'[v:searchforward].'zv'",
+    { expr = true, desc = "Prev Search Result" }
+)
+map(
+    "x",
+    "N",
+    "'nN'[v:searchforward]",
+    { expr = true, desc = "Prev Search Result" }
+)
+map(
+    "o",
+    "N",
+    "'nN'[v:searchforward]",
+    { expr = true, desc = "Prev Search Result" }
+)
 
 -- ===========================================================
 -- SMART TEXT EDITING
@@ -150,19 +232,35 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 -- ===========================================================
 
 -- Commenting (add comment above/below current line)
-map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
-map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
+map(
+    "n",
+    "gco",
+    "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>",
+    { desc = "Add Comment Below" }
+)
+map(
+    "n",
+    "gcO",
+    "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>",
+    { desc = "Add Comment Above" }
+)
 
 -- Quickfix and location lists
 map("n", "<leader>xl", function()
-    local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
+    local success, err = pcall(
+        vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose
+            or vim.cmd.lopen
+    )
     if not success and err then
         vim.notify(err, vim.log.levels.ERROR)
     end
 end, { desc = "Location List" })
 
 map("n", "<leader>xq", function()
-    local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+    local success, err = pcall(
+        vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose
+            or vim.cmd.copen
+    )
     if not success and err then
         vim.notify(err, vim.log.levels.ERROR)
     end
@@ -211,15 +309,30 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 map("n", "zv", "zMzvzz", { desc = "Close all folds except the current one" })
 
 -- Smart fold navigation (closes current, opens next/previous)
-map("n", "zj", "zcjzOzz", { desc = "Close current fold when open. Always open next fold." })
-map("n", "zk", "zckzOzz", { desc = "Close current fold when open. Always open previous fold." })
+map(
+    "n",
+    "zj",
+    "zcjzOzz",
+    { desc = "Close current fold when open. Always open next fold." }
+)
+map(
+    "n",
+    "zk",
+    "zckzOzz",
+    { desc = "Close current fold when open. Always open previous fold." }
+)
 
 -- ===========================================================
 -- UTILITY SHORTCUTS
 -- ===========================================================
 
 -- Toggle line wrapping
-map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap", silent = true })
+map(
+    "n",
+    "<leader>tw",
+    "<cmd>set wrap!<CR>",
+    { desc = "Toggle Wrap", silent = true }
+)
 
 -- Fix spelling (picks first suggestion)
 map("n", "z0", "1z=", { desc = "Fix word under cursor" })
