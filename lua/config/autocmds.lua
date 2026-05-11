@@ -2,6 +2,7 @@ local function augroup(name)
     return vim.api.nvim_create_augroup("user_" .. name, { clear = true })
 end
 
+-- Reload buffers when Neovim regains focus or a terminal closes/leaves
 local _checktime_timer = nil
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
     group = augroup("checktime"),
@@ -28,6 +29,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Re-equalize window splits after the terminal is resized
 local _resize_timer = nil
 vim.api.nvim_create_autocmd({ "VimResized" }, {
     group = augroup("resize_splits"),
@@ -67,6 +69,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+-- Treat hyphens as word characters in CSS/HTML-like filetypes
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("iskeyword_kebab"),
     pattern = {
@@ -84,12 +87,12 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Show relative numbers only in insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {
     group = augroup("insert_ui_perf"),
     callback = function()
         vim.wo.cursorline = false
-        vim.wo.relativenumber = false
-        vim.wo.number = true -- keep absolute numbers
+        vim.wo.relativenumber = true
     end,
 })
 
@@ -97,7 +100,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     group = augroup("insert_ui_perf"),
     callback = function()
         vim.wo.cursorline = true
-        vim.wo.relativenumber = true
+        vim.wo.relativenumber = false
     end,
 })
 
