@@ -13,12 +13,30 @@ return {
     },
     settings = {
         Lua = {
-            runtime = { version = "LuaJIT" }, -- Neovim uses LuaJIT
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("lua", true),
-                checkThirdParty = false, -- stops the "do you want to configure" prompt
+            runtime = {
+                version = "LuaJIT",
+                path = vim.split(package.path, ";"), -- helps LuaLS resolve requires
             },
-            diagnostics = { globals = { "vim" } }, -- Recognize 'vim' global
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true), -- "" gets ALL runtime files, not just lua/
+                checkThirdParty = false,
+                maxPreload = 100000,
+                preloadFileSize = 10000,
+            },
+            diagnostics = {
+                globals = { "vim" },
+                unusedLocalExclude = { "_*" }, -- ignore intentionally unused _vars
+            },
+            completion = {
+                callSnippet = "Replace", -- shows full signature snippet on complete
+            },
+            hint = {
+                enable = true, -- inlay hints
+                setType = true, -- show type on assignments
+                paramName = "Disable", -- param name hints get noisy in Lua
+                arrayIndex = "Disable", -- same
+            },
+            telemetry = { enable = false },
         },
     },
 }
