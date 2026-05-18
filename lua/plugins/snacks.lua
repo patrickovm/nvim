@@ -183,6 +183,11 @@ Snacks.setup({
                     "**/claude/history.jsonl",
                     "**/claude/*cache*",
                 },
+                layout = {
+                    layout = {
+                        position = "right",
+                    },
+                },
             },
         },
     },

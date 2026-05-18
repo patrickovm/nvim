@@ -3,6 +3,8 @@ vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
         go = { "goimports", "gofmt", stop_after_first = true },
         python = { "black", stop_after_first = true },
         json = { "prettier", stop_after_first = true },
@@ -38,8 +40,20 @@ require("conform").setup({
                         break
                     end
                 end
-                local config = project_config or vim.fn.expand("~/.prettierrc")
-                return { "--config", config, "--stdin-filepath", ctx.filename }
+                if project_config then
+                    return {
+                        "--config",
+                        project_config,
+                        "--stdin-filepath",
+                        ctx.filename,
+                    }
+                else
+                    return {
+                        "--no-config",
+                        "--stdin-filepath",
+                        ctx.filename,
+                    }
+                end
             end,
         },
     },
