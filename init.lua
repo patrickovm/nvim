@@ -1,35 +1,9 @@
 if vim.g.vscode then
-    -- VSCode extension
-    vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+    vim.opt.clipboard = "unnamedplus"
 else
-    require("patrick.launch")
-    require("patrick.options")
-    require("patrick.keymaps")
-    require("patrick.autocmds")
-    spec("patrick.colorscheme")
-    spec("patrick.devicons")
-    spec("patrick.treesitter")
-    spec("patrick.lualine")
-    spec("patrick.schemastore")
-    spec("patrick.mason")
-    spec("patrick.lspconfig")
-    spec("patrick.telescope")
-    spec("patrick.conform")
-    spec("patrick.illuminate")
-    spec("patrick.nvim-tree")
-    spec("patrick.cmp")
-    spec("patrick.neogit")
-    spec("patrick.gitsigns")
-    spec("patrick.harpoon")
-    spec("patrick.barbecue")
-    spec("patrick.alpha")
-    spec("patrick.project")
-    spec("patrick.autopairs")
-    spec("patrick.extras.colorizer")
-    spec("patrick.extras.dressing")
-    spec("patrick.extras.fidget")
-    spec("patrick.extras.navbuddy")
-    spec("patrick.extras.neoscroll")
-    spec("patrick.extras.ufo")
-    require("patrick.lazy")
+    vim.g.mapleader = " "
+    vim.g.maplocalleader = " "
+
+    require("config")
+    require("plugins")
 end
